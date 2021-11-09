@@ -11,7 +11,7 @@ jobs:
     - run: |
         for file in ${{ steps.files.outputs.all }}; do 
           if [[ ${file} == *.md ]]; then
-            mdspell ${file} '!**/node_modules/**/*.md'; 
+            mdspell ${file} '!**/node_modules/**/*.md' --ignore-numbers --ignore-acronyms --report; 
           fi
         done
       name: Spell Check Changed Files
