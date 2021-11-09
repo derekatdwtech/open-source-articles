@@ -8,5 +8,10 @@ jobs:
     - uses: jitterbit/get-changed-files@v1
       id: files
     - run: npm install -g markdown-spellcheck
-    - run: for file in ${{ steps.files.outputs.all }}; do markdown-spellcheck ${file} '!**/node_modules/**/*.md'; done
+    - run: |
+        for file in ${{ steps.files.outputs.all }}; do 
+          if [ "${file}" -eq "*.md" ]; then
+            npm markdown-spellcheck ${file} '!**/node_modules/**/*.md'; 
+          fi
+        done
       name: Spell Check Changed Files
