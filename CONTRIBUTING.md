@@ -5,7 +5,7 @@ Anyone can contribute to this project, but requires approval from our community 
 ## Creating Articles
 1. Create a branch from the `master` branch with the pattern `article/*`    
 2. In the category folder associated with your article create a dated series of folders 
-    1. For example, if you're the first article in the sports cateogry on January 1st, 2022 then you need to create a folder called `2022` in the **sports** folder, then below that a folder named `01` for the first month of the year, and then a folder below that named `01` for the first day of the month. This helps us quickly organize our articles for searching. The structure would look like the below diagram:
+    1. For example, if you're the first article in the sports category on January 1st, 2022 then you need to create a folder called `2022` in the **sports** folder, then below that a folder named `01` for the first month of the year, and then a folder below that named `01` for the first day of the month. This helps us quickly organize our articles for searching. The structure would look like the below diagram:
     ```
     sports
     |_ 2022
@@ -22,7 +22,7 @@ Anyone can contribute to this project, but requires approval from our community 
 1. Create a branch from the `master` branch with the pattern `edit/<MY ARTICLE NAME>`.
 2. Make your edits to the file in question and commit the branch.
 3. Open a pull request to the `master` branch for review.   
-    1. Commit messages for edits might look like the follwing `(sports): Edit by Derek Williams, <title of article>`
+    1. Commit messages for edits might look like the following `(sports): Edit by Derek Williams, <title of article>`
 4. Once approved you can merge the pull request. All edits are visible to end users for integrity of the journalism. It's a users right to understand what has been updated.
 
 ## Editing Core (non-article) files.
