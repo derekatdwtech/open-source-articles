@@ -10,7 +10,7 @@ jobs:
     - run: npm install -g markdown-spellcheck
     - run: |
         for file in ${{ steps.files.outputs.all }}; do 
-          if [ "${file}" -eq "*.md" ]; then
+          if [[ "${file}" -eq "*.md" ]]; then
             npm markdown-spellcheck ${file} '!**/node_modules/**/*.md'; 
           fi
         done
