@@ -5,9 +5,8 @@ jobs:
     runs-on:  ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - uses: jitterbit/get-changed-files@v1
+      id: files
     - run: npm install -g markdown-spellcheck
-    - run: |
-        FILES=$(git diff-tree --no-commit-id --name-only -r $(git rev-parse --verify HEAD))
-        for file in $FILES ; do 
-          markdown-spellcheck $file '!**/node_modules/**/*.md'
-        Sdone
+    - run: for file in ${{ steps.files.outputs.all }}; do markdown-spellcheck ${file} '!**/node_modules/**/*.md'; done
+      name: Spell Check Changed Files
