@@ -6,4 +6,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: npm install -g markdown-spellcheck
-    - run: for file in $(git diff-tree --no-commit-id --name-only -r $(git rev-parse --verify HEAD)); do markdown-spellcheck $file '!**/node_modules/**/*.md'; done
+    - run: |
+        FILES=$(git diff-tree --no-commit-id --name-only -r $(git rev-parse --verify HEAD))
+        for file in $FILES ; do 
+          markdown-spellcheck $file '!**/node_modules/**/*.md'
+        Sdone
